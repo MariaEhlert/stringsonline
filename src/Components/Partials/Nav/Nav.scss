@@ -1,0 +1,89 @@
+.navWrapper {
+    padding-bottom: 3%;
+    .contact{
+        img{
+            width: 60%;
+        }
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        gap: 1%;
+        display: flex;
+        justify-content: end;
+        figure{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            //telefon ikonet er større end de andre ikoner
+            .phoneIcon{
+                width: 40%;
+            }
+            figcaption{
+                font-size: 0.9vw;
+            } 
+        }
+    }
+    
+    .navigation {
+        display: grid;
+        grid-template-columns: 75% 25%;
+        gap: 1%;
+
+        ul {
+
+            img {
+                position: relative;
+                width: 100%;
+                padding-top: 0.5%;
+            }
+
+            li {
+                position: absolute;
+                display: flex;
+                justify-content: end;
+                width: 100%;
+                top: 13.2vh;
+                right: 26%;
+
+                a {
+                    padding: 2%;
+                    font-size: 1.2vw;
+                }
+
+                button {
+                    color: #131313;
+                    background-color: #00F9B6;
+                    font-size: 1.3vw;
+                    cursor: pointer;
+                    border: none;
+                    padding: 5px 25px;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .seachWrapper {
+            input[type=text] {
+                border: 0.5px solid #A1D5D3;
+                background-color: #0A1D1C;
+                border-radius: 3px;
+                width: 70%;
+                padding: 14px 25px;
+                margin-bottom: 6px;
+            }
+
+            ::placeholder {
+                color: #00F9B6;
+            }
+
+            button {
+                padding: 6px 10px;
+                border-radius: 3px;
+                background-color: #00F9B6;
+                cursor: pointer;
+
+                .material-symbols-outlined {
+                    color: #131313;
+                }
+            }
+        }
+    }
+}
