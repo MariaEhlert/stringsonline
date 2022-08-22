@@ -1,3 +1,24 @@
 .headerWrapper{
     padding-bottom: 3%;
+    .contact{
+        img{
+            width: 60%;
+        }
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        gap: 1%;
+        display: flex;
+        justify-content: end;
+        figure{
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            //telefon ikonet er større end de andre ikoner
+            .phoneIcon{
+                width: 40%;
+            }
+            figcaption{
+                font-size: 0.9vw;
+            } 
+        }
+    }
 }

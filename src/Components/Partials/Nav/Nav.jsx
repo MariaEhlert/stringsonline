@@ -1,37 +1,15 @@
 import { Link, NavLink } from 'react-router-dom'
-import { Login } from '../../Sites/Login/Login'
 import './Nav.scss'
 
 export const Nav = props => {
 	return (
 		<nav className='navWrapper'>
-			<div className='contact'>
-				<figure>
-					<img src={require('../../../Assets/Images/mail-icon.png')} />
-					<figcaption>
-						<Link to='/'>
-							<p>sales@stringsonline.com</p>
-						</Link>
-					</figcaption>
-				</figure>
-				<figure>
-					<img className='phoneIcon' src={require('../../../Assets/Images/phone-icon.png')} />
-					<figcaption>
-						<Link to='/'>
-							<p> +45 98 12 22 68</p>
-						</Link>
-					</figcaption>
-				</figure>
-				<div >
-				<Link to='/'>
-					<img src={require('../../../Assets/Images/cart-icon.png')} />
-				</Link>
-				</div>
-
-			</div>
 			<div className='navigation'>
 				<ul>
-					<img src={require('../../../Assets/Images/header-bg.png')} />
+					{/* skal linke til forsiden */}
+					<Link to='/'>
+						<img src={require('../../../Assets/Images/header-bg.png')} alt={'headerBg'}  />
+					</Link>
 					<li >
 						{props && props.navItems && props.navItems.map((value, index) => {
 							return (

@@ -4,6 +4,7 @@ import { Header } from './Components/Partials/Header/Header';
 import { AppRouter } from './Components/AppRouter/AppRouter';
 import { Main } from './Components/Partials/Main/Main';
 import { Footer } from './Components/Partials/Footer/Footer';
+import { SideNav } from './Components/Partials/Nav/SideNav';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Main>
+        <SideNav />
         <AppRouter />
       </Main>
       <Footer />

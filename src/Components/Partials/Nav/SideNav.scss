@@ -1,4 +1,11 @@
 .sideNav{
     border: 0.5px solid #A1D5D3;
     background-color: #0A1D1C;
+    width: 10%;
+    li{
+        display: block;
+        a{
+            color: #00F9B6;
+        }
+    }
 }
