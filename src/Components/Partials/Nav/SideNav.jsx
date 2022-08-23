@@ -4,12 +4,12 @@ import appService from "../../../AppServices/AppService"
 import './SideNav.scss'
 
 export const SideNav = () => {
-    const [productGroups, setProductGroups] = useState([]);
+    const [groups, setGroups] = useState([]);
     const getGroups = async () => {
         try {
             const respones = await appService.getList('productgroups');
             if (respones.data) {
-                setProductGroups(respones.data.items)
+                setGroups(respones.data.items)
             };
         } catch (error) {
             console.log(error);
@@ -21,12 +21,26 @@ export const SideNav = () => {
     return (
         <nav className="sideNav">
             <ul>
-                {productGroups && productGroups.map((groups) => (
-                    <li key={groups.id}>
-                        <Link to={groups.id}>{groups.title}</Link>
-                    </li>
-                ))}
+                {groups && groups.map((group) => {
+                    return (
+                        <div key={group.id}>
+                            <li key={group.id}>
+                                <Link to={group.id}>{group.title}</Link>
+                            </li>
+                            {group && group.subgroups.map((item) => {
+                                return(
+                                    <li key={item.id}>
+                                        <Link to=''>{item.title}</Link>
+                                    </li>
+                                )
+                            })}
+                        </div>
+                    )
+                })}
+                <Link to='/brands'>Brands</Link>
             </ul>
         </nav>
     )
+
+
 }
