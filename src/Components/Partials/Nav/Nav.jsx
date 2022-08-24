@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './Nav.scss'
 
 export const Nav = props => {
@@ -7,18 +7,18 @@ export const Nav = props => {
 			<div className='navigation'>
 				<ul>
 					{/* skal linke til forsiden */}
-					<Link to='/'>
+					<NavLink to='/'>
 						<img src={require('../../../Assets/Images/header-bg.png')} alt={'headerBg'}  />
-					</Link>
+					</NavLink>
 					<li >
 						{props && props.navItems && props.navItems.map((value, index) => {
 							return (
 								<NavLink key={index} to={value.path}>{value.name}</NavLink>
 							)
 						})}
-						<Link to='/login'>
+						<NavLink to='/login'>
 							<button>Login</button>
-						</Link>
+						</NavLink>
 					</li>
 
 				</ul>

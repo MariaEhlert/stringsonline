@@ -1,24 +1,32 @@
-.headerWrapper{
+.headerWrapper {
     padding-bottom: 3%;
-    .contact{
-        img{
-            width: 60%;
-        }
-        display: grid;
-        grid-template-columns: 1fr 6fr 1fr;
-        gap: 1%;
-        display: flex;
-        justify-content: end;
-        figure{
+    position: relative;
+    .contactWrapper {
+        .contact {
+            position: absolute;
+            right: 3%;
+            top: 25%;
             display: grid;
-            grid-template-columns: 1fr 4fr;
-            //telefon ikonet er større end de andre ikoner
-            .phoneIcon{
-                width: 40%;
+            grid-template-columns: 4fr 4fr 1fr;
+            figure {
+                display: grid;
+                grid-template-columns: 1fr 5fr;
+                .mailIcon {
+                    width: 70%;
+                }
+                .phoneIcon {
+                    width: 30%;
+                }
+                figcaption {
+                    font-size: 0.7vw;
+                }
             }
-            figcaption{
-                font-size: 0.9vw;
-            } 
+            .cartIcon {
+                position: absolute;
+                width: 6%;
+                top: 1%;
+                right: 15%;
+            }
         }
     }
 }

@@ -13,9 +13,12 @@ function App() {
       <Header />
       <Main>
         <SideNav />
-        <AppRouter />
+        <section>
+          <AppRouter />
+        </section>
       </Main>
       <Footer />
+
     </BrowserRouter>
   );
 }

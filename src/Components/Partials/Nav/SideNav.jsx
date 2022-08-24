@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import appService from "../../../AppServices/AppService"
 import './SideNav.scss'
 
 export const SideNav = () => {
+    const { id } = useParams();
     const [groups, setGroups] = useState([]);
     const getGroups = async () => {
         try {
-            const respones = await appService.getList('productgroups');
+            const respones = await appService.getList('');
             if (respones.data) {
-                setGroups(respones.data.items)
+                setGroups(respones.data.productgroups.items)
             };
         } catch (error) {
             console.log(error);
@@ -18,29 +19,44 @@ export const SideNav = () => {
     useEffect(() => {
         getGroups();
     }, [])
+
+    const handleSub = event => {
+        event.currentTarget.classList.toggle('active');
+        let subgroup = event.currentTarget.nextElementSibling;
+        if (subgroup.style.display === 'block') {
+            subgroup.style.display = 'none';
+        } else {
+            subgroup.style.display = 'block';
+        }
+    }
     return (
         <nav className="sideNav">
             <ul>
                 {groups && groups.map((group) => {
                     return (
-                        <div key={group.id}>
-                            <li key={group.id}>
-                                <Link to={group.id}>{group.title}</Link>
+                        <ul key={group.id}>
+                            <li onClick={handleSub}>
+                                {group.title}
                             </li>
-                            {group && group.subgroups.map((item) => {
-                                return(
-                                    <li key={item.id}>
-                                        <Link to=''>{item.title}</Link>
-                                    </li>
-                                )
-                            })}
-                        </div>
+                            <li className="subgroup">
+                                {group && group.subgroups.map((productList) => {
+                                    return (
+                                        <ol key={productList.id}>
+                                            <NavLink to={`/product/${productList.id}`}>{productList.title}</NavLink>
+                                        </ol>
+                                    )
+                                })}
+                            </li>
+                        </ul>
                     )
                 })}
                 <Link to='/brands'>Brands</Link>
             </ul>
         </nav>
     )
-
-
 }
+
+
+
+
+

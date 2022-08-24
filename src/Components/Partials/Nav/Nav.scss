@@ -1,9 +1,10 @@
 .navWrapper {
+    padding-top: 5%;
     padding-bottom: 3%;
 
     .navigation {
         display: grid;
-        grid-template-columns: 75% 25%;
+        grid-template-columns: 3fr 1fr;
         gap: 1%;
 
         ul {
@@ -38,13 +39,14 @@
         }
 
         .seachWrapper {
+            display: flex;
+            justify-content: end;
             input[type=text] {
                 border: 0.5px solid #A1D5D3;
                 background-color: #0A1D1C;
                 border-radius: 3px;
-                width: 70%;
+                width: 100%;
                 padding: 14px 25px;
-                // margin-bottom: 6px;
             }
 
             ::placeholder {
@@ -52,8 +54,8 @@
             }
 
             button {
-                padding: 6px 10px;
-                border-radius: 3px;
+                padding: 8px 10px;
+                border-radius: 5px;
                 background-color: #00F9B6;
                 cursor: pointer;
 

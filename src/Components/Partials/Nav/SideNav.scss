@@ -1,11 +1,25 @@
 .sideNav{
     border: 0.5px solid #A1D5D3;
     background-color: #0A1D1C;
-    width: 10%;
+    width: 100%;
+    margin-top: 0;
     li{
         display: block;
-        a{
-            color: #00F9B6;
+        cursor: pointer;
+        color: #00F9B6;
+    }
+    a{
+        color: #00F9B6;
+
+    }
+    .subgroup{
+        padding-left: 10%;
+        display: none;
+        overflow: hidden;
+        ol{
+            .active{
+                color: white;
+            }
         }
     }
 }
