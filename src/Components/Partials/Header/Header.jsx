@@ -16,17 +16,13 @@ export const Header = () => {
 					<figure>
 						<img className="mailIcon" src={require('../../../Assets/Images/mail-icon.png')} alt={'mailIcon'} />
 						<figcaption>
-							<Link to='/'>
-								<p>sales@stringsonline.com</p>
-							</Link>
+							<a href="mailto:sales@stringsonline.com">sales@stringsonline.com</a>
 						</figcaption>
 					</figure>
 					<figure>
 						<img className='phoneIcon' src={require('../../../Assets/Images/phone-icon.png')} alt={'phoneIcon'} />
 						<figcaption>
-							<Link to='/'>
-								<p> +45 98 12 22 68</p>
-							</Link>
+							<a href="tel:98-12-22-68">+45 98 12 22 68</a>
 						</figcaption>
 					</figure>
 					<div>

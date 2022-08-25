@@ -1,28 +1,34 @@
-.heroWrapper{
+.heroWrapper {
     padding-bottom: 5%;
 
-    figure{
+    figure {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        img{
+
+        img {
             width: 100%;
-            // max-height: 70vh;
+
             height: 300px;
         }
-        figcaption{
+
+        figcaption {
             background-color: #2C3737;
             padding: 5%;
-            h3{
+
+            h3 {
                 font-size: 2vw;
                 padding-bottom: 5%;
             }
-            p{
+
+            p {
                 font-size: 2vw;
             }
-            hr{
+
+            hr {
                 opacity: 0.5;
             }
-            button{
+
+            button {
                 background-color: #00F9B6;
                 color: #131313;
                 cursor: pointer;
@@ -36,40 +42,55 @@
         }
     }
 }
-.productWrapper{
+
+.productWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1%;
     padding-bottom: 10%;
     padding-top: 2%;
-    article{
-        figure{
-            height: 400px;
+
+    article {
+        figure {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            gap: 1%;
             border: 0.5px solid #dbdbdb47;
-            img{
+
+            .imageWrapper {
                 background-color: white;
-                margin-left: -51%;
-                width: 150%;
-                transform: rotate(270deg);
+                height: 46vh;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 16vh;
+                    transform: rotate(270deg);
+                    width: 100%;
+                }
             }
-            figcaption{
-                margin-left: -40%;
-                h3{
+
+            figcaption {
+                padding-bottom: 40%;
+
+                h3 {
                     font-size: 1.5vw;
                     padding-bottom: 5%;
                 }
-                p{
+
+                p {
                     padding-bottom: 10%;
-                  a{
-                    color: #00F9B6;
-                  }  
+
+                    a {
+                        color: #00F9B6;
+                    }
                 }
-                .shopcartWrapper{
+
+                .shopcartWrapper {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    button{
+
+                    button {
                         background-color: #D10061;
                         cursor: pointer;
                         border: none;
@@ -77,6 +98,99 @@
                     }
                 }
 
+            }
+        }
+    }
+}
+
+
+//BREAKPOINTS
+$tablet: 980px;
+$mobile: 580px;
+
+
+
+@media screen and (max-width: $tablet) {
+    body {
+        .heroWrapper {
+            figure {
+                img {
+                    height: 210px;
+                }
+            }
+        }
+        .productWrapper {
+            padding-bottom: 10%;
+            padding-top: 2%;       
+            article {
+                figure {  
+                    gap: 2%;
+                    .imageWrapper {
+                        height: 30vh;     
+                        img {
+                            top: 10vh;
+                        }
+                    }
+                    figcaption {
+                        padding-bottom: 30%;      
+                        p {
+                            font-size: 1vw;
+                            padding-bottom: 10%;        
+                        }        
+                        .shopcartWrapper {
+                            display: grid;
+                            grid-template-columns: 1fr;        
+                        }       
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $mobile) {
+    body {
+        .heroWrapper {
+            figure {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                img {
+                    height: 135px;
+                }      
+            }
+        }
+        
+        .productWrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1%;
+            padding-bottom: 10%;
+            padding-top: 2%;
+        
+            article {
+                figure {
+                    .imageWrapper {
+                        height: 30vh;        
+                        img {
+                            top: 10vh;
+                        }
+                    }
+                    figcaption {
+                        h3 {
+                            font-size: 2.5vw;
+                        }
+        
+                        p {
+                            font-size: 2vw;
+                        }
+                        .shopcartWrapper {
+                            display: grid;
+                            grid-template-columns: 1fr;
+        
+                        }
+        
+                    }
+                }
             }
         }
     }

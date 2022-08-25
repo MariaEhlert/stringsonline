@@ -1,7 +1,8 @@
+import './TradingConditions.scss'
 export const TradingConditions = () => {
     return (
         <article>
-            <h1>Salgs- og handelsbetingelser</h1>
+            <h2>Salgs- og handelsbetingelser</h2>
             <h3>Virksomhedsoplysninger</h3>
             <p>Her beskrives virksomheden med alle nødvendige oplysninger såsom navn, adresse og CVR-nummer.</p>
             <h3>Priser og betaling</h3>

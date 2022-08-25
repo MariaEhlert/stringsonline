@@ -23,3 +23,34 @@
         }
     }
 }
+
+//BREAKPOINTS
+$mobile: 580px;
+
+
+@media screen and (max-width: $mobile){
+    body{
+    .sideNav{
+        border: 0.5px solid #A1D5D3;
+        background-color: #0A1D1C;
+        width: 100%;
+        margin-top: 0;
+        li{
+            font-size: 1.6vw;
+        }
+        .subgroup{
+            padding-left: 10%;
+            display: none;
+            overflow: hidden;
+            ol{
+                a{
+                    font-size: 1.6vw;
+                }
+                .active{
+                    color: white;
+                }
+            }
+        }
+    } 
+    }
+}

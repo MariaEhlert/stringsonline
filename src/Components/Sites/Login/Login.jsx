@@ -1,71 +1,40 @@
-import { useContext, useState } from "react"
-import { useForm } from "react-hook-form";
-// import { AuthContext } from "./AuthProvider"
-import axios from "axios";
-import { AuthContext } from "./AuthProvider";
+import { useState } from "react"
+import axios from 'axios'
 
 export const Login = () => {
-    // const { login, setLogin } = useContext(AuthContext);
-    // const { register, hanldeSubmit, formState: { errors } } = useForm();
-    // const [userMessage, setUserMessage] = useState('');
-    // const onSubmit = async data => {
-    //     const formdata = new FormData();
-    //     formdata.append('username', data.username);
-    //     formdata.append('password', data.password);
-
-    //     const url = 'https://api.mediehuset.net/token';
-    //     const result = await axios(url, formdata)
-    //     handleSessionData(result.data)
-    // }
-    // const handleSessionData = resp => {
-    //     if (!resp.userMessage) {
-    //         setLogin(resp)
-    //         sessionStorage.setItem('token', JSON.stringify(resp))
-    //         setUserMessage(`Du er logget på som ${resp.username}`)
-    //     } else {
-    //         setUserMessage('Fandt ingen match på brugernavn eller adgangskode')
+    // const [message, setMessage] = useState('Indtast brugernavn og adgangskode for at logge ind');
+    // const [loginData, setLoginData] = useState('');
+    // const submitLogin = async data => {
+    //     const formData = new FormData(data.target.form)
+    //     const url = 'https://api.mediehuset.net/token'
+    //     try {
+    //         const result = await axios.post(url, formData)
+    //         handleSessionData(result);
+    //     } catch (error) {
+    //         setMessage('Kunne ikke logge ind')
     //     }
-
     // }
-    // const LoginForm = () => {
-    //     return (
-    //         <form onSubmit={hanldeSubmit(onSubmit)}>
-    //             <div>
-    //                 <h4>Login til SingOnline</h4>
-    //             </div>
-    //             <div>
-    //                 <label htmlFor="username">Brugernavn:</label>
-    //                 <input {...register('username', { required: true })} />
-    //                 {errors.username && "Du skal indtaste dit brugernavn!"}
-    //             </div>
-    //             <div>
-    //                 <label htmlFor="password">Adgangskode:</label>
-    //                 <input type="password" {...register('password', { required: true })} />
-    //                 {errors.username && "Du skal indtaste din adgangskode!"}
-    //             </div>
-    //             <div>
-    //                 <button type="reset">Annuller</button>
-    //                 <button type="submit">Login</button>
-    //             </div>
-    //         </form>
-
-    //     )
+    // const handleSessionData = data => {
+    //     if (data.state === 201) {
+    //         setLoginData(data.data);
+    //         sessionStorage.setItem('token', JSON.stringify(data.data))
+    //     }
     // }
-
     // return (
     //     <>
-    //         {!loginData || !loginData.username ?
-    //             <div className="loginwrapper">
-    //                 <LoginForm />
-    //             </div>
+    //         <p>{message}</p>
+    //         {!loginData && !loginData.username ?
+    //             <form method="post">
+    //                 <input type="text" name="username" id="username" />
+    //                 <input type="password" name="password" id="password" />
+    //                 <button type="button" onClick={submitLogin}>Login</button>
+    //                 <button type="reset">Nulstil</button>
+    //             </form>
     //             :
-    //             <>
-    //                 <Header />
-    //                 <Main>
-    //                     <AppRouter />
-    //                 </Main>
-    //                 <Footer />
-    //             </>
+    //             <form>
+    //                 <p>Du er logget ind som {loginData.username}</p>
+    //                 <button type="button">Log ud</button>
+    //             </form>
     //         }
     //     </>
     // )

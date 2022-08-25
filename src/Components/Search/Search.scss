@@ -1,0 +1,57 @@
+.searchWrapper {
+    display: flex;
+    justify-content: end;
+    input[type=text] {
+        border: 0.5px solid #A1D5D3;
+        background-color: #0A1D1C;
+        border-radius: 3px;
+        width: 100%;
+        padding: 14px 25px;
+    }
+
+    ::placeholder {
+        color: #00F9B6;
+    }
+
+    button {
+        padding: 8px 10px;
+        border-radius: 5px;
+        background-color: #00F9B6;
+        cursor: pointer;
+
+        .material-symbols-outlined {
+            color: #131313;
+        }
+    }
+}
+
+//BREAKPOINTS
+$tablet: 980px;
+$mobile: 580px;
+
+
+@media screen and (max-width: $tablet) {
+  body{
+    .searchWrapper {
+        input[type=text] {
+            padding: 8px 25px;
+        }    
+        button {
+            padding: 3px 8px;
+        }
+    }    
+  }
+}
+@media screen and (max-width: $mobile){
+    body{
+    .searchWrapper {
+        input[type=text] {
+            width: 20%;
+            padding: 5px 20px;
+        }
+        button {
+            padding: 1px 4px;
+        }
+    } 
+    }
+}

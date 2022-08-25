@@ -11,11 +11,17 @@
             figure {
                 display: grid;
                 grid-template-columns: 1fr 5fr;
+                figcaption{
+                    a{
+                        font-size: 1vw;
+                    }
+                }
                 .mailIcon {
                     width: 70%;
                 }
                 .phoneIcon {
                     width: 30%;
+                    margin-left: 45%;
                 }
                 figcaption {
                     font-size: 0.7vw;
@@ -28,5 +34,53 @@
                 right: 15%;
             }
         }
+    }
+}
+
+
+//BREAKPOINTS
+$tablet: 980px;
+$mobile: 580px;
+
+
+@media screen and (max-width: $tablet) {
+  body{
+    .headerWrapper {
+        .contactWrapper {
+            .contact {
+                right: 1%;
+                top: 18%;
+                figure{
+                    figcaption{
+                        a{
+                            font-size: 1.3vw;
+                        }
+                    }
+                }
+            }
+        }
+    }   
+  }
+}
+@media screen and (max-width: $mobile){
+    body{
+    .headerWrapper {
+        padding-bottom: 3%;
+        position: relative;
+        .contactWrapper {
+            .contact {
+                position: absolute;
+                right: 0;
+                top: 5%;
+                figure{
+                    figcaption{
+                        a{
+                            font-size: 1.5vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
     }
 }

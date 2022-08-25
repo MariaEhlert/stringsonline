@@ -1,0 +1,66 @@
+.brandsWrapper{
+
+    li{
+        display: block;
+        cursor: pointer;
+        color: #00F9B6;
+    }
+    a{
+        color: #00F9B6;
+        
+    }
+    .subgroup{
+        padding-left: 10%;
+        display: none;
+        overflow: hidden;
+        ol{
+            .active{
+                color: white;
+            }
+        }
+    }
+}
+.brandsDetalis{
+    figure{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 1%;
+        img{
+            width: 100%;
+            background-color: white;
+        }
+        figcaption{
+            h2{
+                font-size: 3vw;
+            }
+            p{
+                font-size: 1.5vw;
+
+            }
+        }
+    }
+
+}
+
+$mobile: 580px;
+
+@media screen and (max-width: $mobile){
+    body{ 
+    .brandsDetalis{
+        figure{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1%;
+            figcaption{
+                h2{
+                  font-size: 4vw;  
+                }
+                p{
+                    font-size: 2vw;
+                }
+            }
+        }
+    
+    }
+    }
+}

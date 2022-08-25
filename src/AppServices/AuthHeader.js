@@ -1,7 +1,8 @@
 export const authHeader = () => {
-  //henter localstorage hvis den eksisterer
+  //henter sessionStorage hvis den eksisterer
   //conditional ternary operator
   const currentToken = sessionStorage.getItem("token") ? JSON.parse(sessionStorage.getItem("token")) : "";
+
   // returner token hvis den eksister
   if (currentToken) {
     return {
@@ -11,7 +12,7 @@ export const authHeader = () => {
       "Access-Control-Allow-Origin": "*",
       "Authorization": `Bearer ${currentToken.access_token}`,
     };
-    // ellers returner den ikke noget
+    // ellers skal den ikke returner noget
   } else {
     return {};
   }
